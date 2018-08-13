@@ -1,0 +1,22 @@
+<h1> NEW GAME </h1>
+<div class= "separate">
+  <table class="letter">
+    <td> <%=@letters[0] %> </td>
+    <td> <%=@letters[1] %> </td>
+    <td> <%=@letters[2] %> </td>
+    <td> <%=@letters[3] %> </td>
+    <td> <%=@letters[4] %> </td>
+    <td> <%=@letters[5] %> </td>
+    <td> <%=@letters[6] %> </td>
+    <td> <%=@letters[7] %> </td>
+    <td> <%=@letters[8] %> </td>
+    <td> <%=@letters[9] %> </td>
+  </table>
+</div>
+
+<form action="/score" method="post" class= " center">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name='score' placeholder="What is the longest word you can find?">
+  <input type="hidden" name="new" value=<%= @letters.join(',') %>>
+  <input type="submit" value="Play!">
+</form
